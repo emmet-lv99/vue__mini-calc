@@ -47,7 +47,6 @@ export default {
     append(number) {
       this.current = `${this.current}${number}`
       if (this.operatorClicked) {
-        this.current = ""
         this.operatorClicked = false
       }
     },
@@ -55,6 +54,7 @@ export default {
       if (this.current.indexOf("." === -1)) this.append(".")
     },
     setPrevious() {
+      this.current = ""
       this.previous = this.current
       this.operatorClicked = true
     },
